@@ -999,7 +999,7 @@ public interface GetSessionInfoBySessionIdActorWrapper {
     void setFullName(String s) throws ChangeValueException;
 
     // Поле для записи идентификатора пользователя
-    void setUsersID(String s) throws ChangeValueException;
+    void setUsersID(String s) throws  ChangeValueException;
 
     // Поле для записи прав пользователя
     void setPermission(List<String> s) throws ChangeValueException;
