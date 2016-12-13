@@ -25,7 +25,7 @@ ChangeStatusFieldEnableOrDisableActor
 
 Vladimir
 
-CheckIfUsingDocumentActor
+CheckIfUsingDocumentActor +
 UniquenessCheckDocumentActor
 GetSessionInfoBySessionIdActor
 CreateGroupHandleUserInfoTransactionalActorStrategy

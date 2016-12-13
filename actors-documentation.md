@@ -768,3 +768,24 @@ public interface CheckFieldNotEmptyActorWrapper {
     String getFieldValue() throws ReadValueException;
 }
 ```
+
+## check-if-using-document-actor CheckIfUsingDocumentActor CheckIfUsingDocumentActor
+
+По заданным имени коллекции, имени поля-массива и значения-строки, извлекает из базы список документов, содержащих в поле-масиве значение-строку.
+Если список наиденных докуентов пуст или поиск осуществить неу далось, бросает `ru.vp.admin.check_if_using_document_actor.CheckIfUsingDocumentActorException`.
+
+Интерфейс:
+```
+public interface CheckIfUsingDocumentActorWrapper {
+
+    // Имя коллекции, в которой будет осуществляться поиск документов.
+    String getCollectionName() throws ReadValueException;
+
+    // Название поля-массива, в котором осуществляется поиск значения для поиска
+    String getValueField() throws ReadValueException;
+
+    // Искомое в поле-массиве значение
+    String getFieldName() throws ReadValueException;
+
+}
+```
