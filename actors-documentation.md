@@ -672,6 +672,33 @@ public interface CheckValueAbsenceInDbActorWrapper {
 
 `password` - цепочка пользователя.
 
+## update-group-handle-user-info-transactional-actor-strategy UpdateGroupHandleUserInfoTransactionalActorStrategy UpdateGroupHandleUserInfoTransactionalActorStrategy
+Стратегия актора `handle-user-info-transactional-actor`
+(`HandleUserInfoTransactionalActor`), обновляющая имя группы.
+
+Бросает `ru.vp.admin.update_group_handle_user_info_transactional_actor_strategy.UpdateGroupHandleUserInfoTransactionalActorStrategy_BadRequest_Exception` в случае, если не указано содержимое новой группы или указанная для редактирования группа не наидена.
+Бросает `ru.vp.admin.update_group_handle_user_info_transactional_actor_strategy.UpdateGroupHandleUserInfoTransactionalActorStrategy_BadRequest_Exception` в случае, если не указано имя или ID редактируемой группы.
+
+Параметры стратегии (`getStrategyParams`):
+
+`{\"groupsCollectionName\": \"user_groups\",\"groupIdFieldName\": \"user_groupsID\",\"groupNameFieldName\": \"groupName\",\"groupRolesFieldName\": \"roles\",\"groupUsersFieldName\": \"users\"}`
+
+Содержание запроса (`getMessage()`):
+
+```
+{
+    "document": {
+        "<groupNameFieldName>": "some-group-name",
+        "<groupIdFieldName>": "admin_SomeChain"
+    }
+}
+```
+
+`\<groupNameFieldName\>` - новое имя группы.
+
+`\<groupIdFieldName\>` - идентификатор переименовываемой группы.
+
+
 ## add-user-to-group-handle-user-info-transactional-actor-strategy AddUserToGroupHandleUserInfoTransactionalActorStrategy AddUserToGroupHandleUserInfoTransactionalActorStrategy
 Стратегия актора `handle-user-info-transactional-actor`
 (`HandleUserInfoTransactionalActor`), добавляющая пользователя в группу.
