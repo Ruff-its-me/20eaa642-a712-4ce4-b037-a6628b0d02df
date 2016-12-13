@@ -743,6 +743,28 @@ public interface CheckValueAbsenceInDbActorWrapper {
 
 `document` - документ группы.
 
+
+## purge-session-handle-user-info-transactional-actor-strategy PurgeSessionHandleUserInfoTransactionalActorStrategy PurgeSessionHandleUserInfoTransactionalActorStrategy
+
+Стратегия актора `handle-user-info-transactional-actor`
+(`HandleUserInfoTransactionalActor`), удаляющая сессию по её id.
+
+Бросает `ru.vp.admin.purge_session_handle_user_info_transactional_actor_strategy.PurgeSessionHandleUserInfoTransactionalActorStrategy_BadRequest_Exception` в случае, если идентификатор сессии не задан.
+
+Параметры стратегии (`getStrategyParams`):
+
+`{\"groupsCollectionName\": \"user_groups\",\"groupIdFieldName\": \"user_groupsID\",\"groupNameFieldName\": \"groupName\",\"groupRolesFieldName\": \"roles\",\"groupUsersFieldName\": \"users\"}`
+
+Содержание запроса (`getMessage()`):
+
+```
+{
+    "sessionId": "6fa443d4-cabe-49d6-9cc8-0162ce0e5dd0"
+}
+```
+
+`document` - документ с идентификатором сессии.
+
 ## get-documents-by-filter-over-a-hundred-feature GetDocumentsByFilterOverAHundredFeature GetDocumentsByFilterOverAHundredActor
 
 `handler` обработчик извлекает все документы заданной коллекции(`даже если их больше 100`), допустимо использование фильтра.
