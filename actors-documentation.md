@@ -1062,3 +1062,20 @@ public interface GetDocumentByIdActorWrapper {
     void setDocument(IObject entries) throws ChangeValueException;
 }
 ```
+## upsert-session-for-users-actor UpsertSessionForUsersActor UpsertSessionForUsersActor
+
+Ложит пользователя и сессию в один документ.
+
+Если попытка не увенчалась успехом, то вылетит `ru.vp.admin.upsert_session_for_users_actor.UpsertSessionForUsersActorExeption`
+
+Интерфейс:
+```
+public interface UpsertSessionForUsersActorWrapper {
+    // документ для совершения операции
+    List<IObject> getDocument() throws ReadValueException;
+    // Получает идентификатор сессии
+    String getSessionID() throws ReadValueException;
+    // Поле для сохранения документа
+    void setDocument(IObject doc) throws ChangeValueException;
+}
+```
