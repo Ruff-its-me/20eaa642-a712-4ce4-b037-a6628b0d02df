@@ -926,3 +926,22 @@ public interface GetSessionInfoBySessionIdActorWrapper {
     String getCollectionName() throws ReadValueException;
 }
 ```
+## transform-actor TransformActor TransformActor
+
+Достаёт из объекта "пользователь" поля: login, password, roles, и ложит их в одноимённые поля. 
+
+Если поле пустое или не определено, то выбрасывается исключение `ru.vp.admin.check_field_not_empty_actor.CheckFieldNotEmptyActorException`.
+
+Интерфейс:
+```
+public interface TransformActorWrapper {
+    //Поле с пользователем
+    List<IObject> getUser() throws ReadValueException;
+    //Устанавливает поле логин
+    void setLogin(String login) throws ChangeValueException;
+    //Устанвовка поля пароль
+    void setPasswordHashFromDB(String hash) throws ChangeValueException;
+    //Установка поля роли
+    void setRole(Object role) throws ChangeValueException;
+}
+```
