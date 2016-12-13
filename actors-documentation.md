@@ -1120,3 +1120,16 @@ public interface GetDocumentListByIdListActorWrapper {
     String getPageNumber() throws ReadValueException;
 }
 ```
+
+## create-collection-actor CreateCollectionActor CreateCollectionActor
+Актор создаёт коллекцию в базе данных.
+
+Если база не может быть создана, то выбрасываетя  `ru.vp.admin.create_collection_actor.exception.CreateCollectionActorException`
+
+Интерфейс:
+```
+public interface ICreateCollectionWrapper {
+    //Получает имя коллекции которую нужно создать
+    String getCollectionName() throws ReadValueException;
+}
+```
