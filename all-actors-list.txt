@@ -1,0 +1,1 @@
+../VPNewGenerationManagement/all-actors-list.txt
