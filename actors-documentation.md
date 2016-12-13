@@ -773,7 +773,7 @@ public interface CheckFieldNotEmptyActorWrapper {
 
 По заданным имени коллекции, имени поля-массива и значения-строки, извлекает из базы список документов, содержащих в поле-масиве значение-строку.
 
-Если список наиденных докуентов не пуст или поиск осуществить не удалось, бросает `ru.vp.admin.check_if_using_document_actor.CheckIfUsingDocumentActorException`.
+Если список наиденных документов не пуст или поиск осуществить не удалось, бросает `ru.vp.admin.check_if_using_document_actor.CheckIfUsingDocumentActorException`.
 
 Интерфейс:
 ```
@@ -795,7 +795,7 @@ public interface CheckIfUsingDocumentActorWrapper {
 
 По заданным имени коллекции, имени поля, значению-строке и значению ID документа проверяет, имеются ли в коллекции документы, имеющие равное указанному значению-строке значение в заданном поле, но отличный от указанного ID идентификатор (имя поля идентификатора считается равным имени коллекции, конкатенированному с суффиксом "ID").
 
-Если список наиденных докуентов не пуст или поиск осуществить не удалось, бросает `ru.vp.admin.uniqueness_check_document_actor.UniquenessCheckDocumentActorException`.
+Если список наиденных документов не пуст или поиск осуществить не удалось, бросает `ru.vp.admin.uniqueness_check_document_actor.UniquenessCheckDocumentActorException`.
 
 Интерфейс:
 ```
@@ -812,5 +812,41 @@ public interface UniquenessCheckDocumentActorWrapper {
 
     // ID документа
     String getID() throws ReadValueException;
+}
+```
+
+
+## get-session-info-by-sessionId-actor GetSessionInfoBySessionIdActor GetSessionInfoBySessionIdActor
+
+По заданным имени коллекции и идентификатору сессии извлекает из сессии с заданным ID фамилию с инифиалами, идентификатор пользователя и список его прав.
+
+Если фамилия пользователя неизвестна, она не добавляется в результат.
+Если имя пользователя неизвестно, инициал имени не добавляется к результату.
+Если отчество пользователя неизвестно, инициал отчества не добавляется к результату.
+
+Если не наидено единственной активной сессии с заданным идентификатором, бросает `ru.vp.admin.get_session_info_by_sessionId_actor.GetSessionInfoBySessionIdException`.
+
+Особенности реализации:
+Пустая фамилия при заданных имени и/или отчестве приводит к тому, что результат содержит лидирующий пробел.
+Первые буквы фамилии и инициалов вставляются как есть (т.е. без принудительного переключения в верхний регистр).
+
+Интерфейс:
+```
+public interface GetSessionInfoBySessionIdActorWrapper {
+
+    // Поле для записи фамилии и инициалов
+    void setFullName(String s) throws ChangeValueException;
+
+    // Поле для записи идентификатора пользователя
+    void setUsersID(String s) throws ChangeValueException;
+
+    // Поле для записи прав пользователя
+    void setPermission(List<String> s) throws ChangeValueException;
+
+    // Идентификатор сессии пользователя
+    String getSessionId() throws ReadValueException;
+
+    // Имя коллекции в которой хранятся сессии
+    String getCollectionName() throws ReadValueException;
 }
 ```

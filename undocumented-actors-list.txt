@@ -27,7 +27,7 @@ Vladimir
 
 CheckIfUsingDocumentActor +
 UniquenessCheckDocumentActor +
-GetSessionInfoBySessionIdActor
+GetSessionInfoBySessionIdActor +
 CreateGroupHandleUserInfoTransactionalActorStrategy
 PurgeSessionHandleUserInfoTransactionalActorStrategy
 AuthorizeWithoutRolesCheckHandleUserInfoActorStrategy
