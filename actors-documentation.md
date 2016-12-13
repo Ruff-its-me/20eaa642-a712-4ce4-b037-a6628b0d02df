@@ -720,6 +720,35 @@ public interface CheckValueAbsenceInDbActorWrapper {
 
 `groupId` - идентификатор группы.
 
+
+## create-user-handle-user-info-transactional-actor-strategy CreateUserHandleUserInfoTransactionalActorStrategy CreateUserHandleUserInfoTransactionalActorStrategy
+
+Стратегия актора `handle-user-info-transactional-actor`
+(`HandleUserInfoTransactionalActor`), создающая нового пользователя на сервере.
+
+Бросает `ru.vp.admin.create_user_handle_user_info_transactional_actor_strategy.CreateUserHandleUserInfoTransactionalActorStrategy_BadRequest_Exception` если в запросе не указан логин или пароль нового пользователя.
+Бросает `ru.vp.admin.create_user_handle_user_info_transactional_actor_strategy.CreateUserHandleUserInfoTransactionalActorStrategy_UserAlreadyExists_Exception` если пользователь с таким логином уже существует.
+
+Параметры стратегии (`getStrategyParams`):
+
+`{\"usersCollectionName\": \"users\",\"userLoginFieldName\": \"login\",\"userIdFieldName\": \"usersID\",\"userRolesFieldName\": \"roles\",\"userGroupsFieldName\": \"groups\",\"userPasswordFieldName\": \"password\"}`
+
+Содержание запроса (`getMessage()`):
+
+```
+{
+    "document": {
+    	"\<userLoginFieldName\>": "eb61269f-2302-4c48-9d34-6934af173d18",
+    	"\<userPasswordFieldName\>": "b2e3617c-ec9b-4831-9d96-9d3e3ba214bf"
+    }
+}
+```
+
+`userLoginFieldName` - логин пользователя.
+
+`userPasswordFieldName` - пароль пользователя.
+
+
 ## add-role-to-group-handle-user-info-transactional-actor-strategy AddRoleToGroupHandleUserInfoTransactionalActorStrategy AddRoleToGroupHandleUserInfoTransactionalActorStrategy
 
 Стратегия актора `handle-user-info-transactional-actor`
