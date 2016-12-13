@@ -1094,3 +1094,29 @@ public interface HashPasswordWrapper {
     // Документ с хешем
     void setDocument(IObject result) throws ChangeValueException;
 }
+
+```
+
+## get-document-list-by-id-list-actor GetDocumentListByIdListActor GetDocumentListByIdListActor
+
+Получает список документов из базы по id.
+
+Если что-то не так, то вылетает `ru.vp.admin.get_document_list_by_id_list_actor.GetDocumentListByIdListActorException`
+
+Интерфейс:
+```
+public interface GetDocumentListByIdListActorWrapper {
+    // Имя коллекции для поиска
+    String getCollectionName() throws ReadValueException;
+    // Имя документа
+    List<String> getDocumentIds() throws ReadValueException;
+    // Имя поля для хранения идентификатора документа в базе данных
+    String getIdFieldNameInDatabase() throws ReadValueException;
+    //Документ с результатом
+    void setDocuments(List<IObject> entries) throws ChangeValueException;
+    //Размер страницы выдачи
+    String getPageSize() throws ReadValueException;
+    //Смешение
+    String getPageNumber() throws ReadValueException;
+}
+```
