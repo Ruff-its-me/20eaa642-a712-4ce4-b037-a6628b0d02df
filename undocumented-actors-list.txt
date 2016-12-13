@@ -12,8 +12,8 @@ GenerateSessionIdActor
 
 Ruslan
 
-TransformActor
-PrintMessageActor
+TransformActor+	
+PrintMessageActor+
 GetDocumentByIdActor
 UpsertSessionForUsersActor
 HashPasswordCreateActor

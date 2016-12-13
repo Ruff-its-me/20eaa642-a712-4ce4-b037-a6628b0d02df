@@ -995,7 +995,7 @@ public interface TransformActorWrapper {
     List<IObject> getUser() throws ReadValueException;
     //Устанавливает поле логин
     void setLogin(String login) throws ChangeValueException;
-    //Устанвовка поля пароль
+    //Установка поля пароль
     void setPasswordHashFromDB(String hash) throws ChangeValueException;
     //Установка поля роли
     void setRole(Object role) throws ChangeValueException;
@@ -1011,5 +1011,25 @@ public interface TransformActorWrapper {
 ```
 public interface PrintMessageActorWrapper {
     IObject getMessage() throws ReadValueException;
+}
+```
+
+## get-document-by-id-actor GetDocumentByIdActor GetDocumentByIdActor
+
+Получает документ из базы данных по id.
+
+Если попытка получить документа в коллекцию не удалась, бросает `ru.vp.studgate.get_document_by_id_actor.GetDocumentByIdActor`
+
+Интерфейс:
+```
+public interface GetDocumentByIdActorWrapper {
+    // Получает имя коллекции
+    String getCollectionName() throws ReadValueException;
+    // Идентификатор документа
+    String getEntityId() throws ReadValueException;
+    // Имя поля для хранения идентификатора документа в базе данных
+    String getIdFieldNameInDatabase() throws ReadValueException;
+    // Документ с результатом
+    void setDocument(IObject entries) throws ChangeValueException;
 }
 ```
