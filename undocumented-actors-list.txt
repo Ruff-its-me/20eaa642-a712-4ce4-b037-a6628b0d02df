@@ -12,10 +12,10 @@ GenerateSessionIdActor
 
 Ruslan
 
-TransformActor+	
-PrintMessageActor+
-GetDocumentByIdActor
-UpsertSessionForUsersActor
+TransformActor +	
+PrintMessageActor +
+GetDocumentByIdActor +
+UpsertSessionForUsersActor +
 HashPasswordCreateActor
 GetDocumentListByIdListActor
 CreateCollectionActor

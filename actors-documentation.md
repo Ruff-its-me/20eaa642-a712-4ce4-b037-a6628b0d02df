@@ -1079,3 +1079,18 @@ public interface UpsertSessionForUsersActorWrapper {
     void setDocument(IObject doc) throws ChangeValueException;
 }
 ```
+
+## hash-password-create-actor HashPasswordCreateActor HashPasswordCreateActor
+
+Генерирует хеш пароля при содействии BCript`а.
+
+Если что-то не так, то вылетает `ru.vp.admin.hash_password_create_actor.HashPasswordCreateActor_Fail_Exception`
+
+Интерфейс:
+```
+public interface HashPasswordWrapper {
+    // Документ с паролем
+    IObject getDocument() throws ReadValueException;
+    // Документ с хешем
+    void setDocument(IObject result) throws ChangeValueException;
+}
