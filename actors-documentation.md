@@ -749,6 +749,35 @@ public interface CheckValueAbsenceInDbActorWrapper {
 `userPasswordFieldName` - пароль пользователя.
 
 
+## update-user-handle-user-info-transactional-actor-strategy UpdateUserHandleUserInfoTransactionalActorStrategy UpdateUserHandleUserInfoTransactionalActorStrategy
+
+Стратегия актора `handle-user-info-transactional-actor`
+(`HandleUserInfoTransactionalActor`), обновляет данные пользователя.
+
+Бросает `ru.vp.admin.update_user_handle_user_info_transactional_actor_strategy.UpdateUserHandleUserInfoTransactionalActorStrategy_BadRequest_Exception` если в запросе не указано поле `document`, не указан логин или id пользователя.
+Бросает `ru.vp.admin.update_user_handle_user_info_transactional_actor_strategy.UpdateUserHandleUserInfoTransactionalActorStrategy_LoginAlreadyExists_Exception` если пользователь с указанным логином уже существует.
+Бросает `ru.vp.admin.update_user_handle_user_info_transactional_actor_strategy.UpdateUserHandleUserInfoTransactionalActorStrategy_UserForUpdatingNotExists_Exception` если пользователь с указанным ID не наиден.
+
+Параметры стратегии (`getStrategyParams`):
+
+`{\"usersCollectionName\": \"users\",\"userLoginFieldName\": \"login\",\"userIdFieldName\": \"usersID\",\"userRolesFieldName\": \"roles\",\"userGroupsFieldName\": \"groups\",\"userPasswordFieldName\": \"password\"}`
+
+Содержание запроса (`getMessage()`):
+
+```
+{
+    "document": {
+    	"\<userLoginFieldName\>": "someNewLogin",
+    	"\<userIdFieldName\>": "b2e3617c-ec9b-4831-9d96-9d3e3ba214bf"
+    }
+}
+```
+
+`userLoginFieldName` - логин пользователя.
+
+`userIdFieldName` - пароль пользователя.
+
+
 ## add-role-to-group-handle-user-info-transactional-actor-strategy AddRoleToGroupHandleUserInfoTransactionalActorStrategy AddRoleToGroupHandleUserInfoTransactionalActorStrategy
 
 Стратегия актора `handle-user-info-transactional-actor`
