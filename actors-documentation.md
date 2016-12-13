@@ -967,10 +967,13 @@ public interface PrintMessageActorWrapper {
 Интерфейс:
 ```
 public interface GetDocumentByIdActorWrapper {
+    // Получает имя коллекции
     String getCollectionName() throws ReadValueException;
+    // Идентификатор документа
     String getEntityId() throws ReadValueException;
+    // Имя поля для хранения идентификатора документа в базе данных
     String getIdFieldNameInDatabase() throws ReadValueException;
-
+    // Документ с результатом
     void setDocument(IObject entries) throws ChangeValueException;
 }
 ```
