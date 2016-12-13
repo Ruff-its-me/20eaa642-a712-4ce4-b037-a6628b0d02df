@@ -918,3 +918,15 @@ public interface TransformActorWrapper {
     void setRole(Object role) throws ChangeValueException;
 }
 ```
+## print-message-actor PrintMessageActor PrintMessageActor
+
+Выводит с помощью ситемного вывода, объект в виде json строки.
+
+Если поле не может быть сериализованно, то выбрасываеться исключение `ru.vp.admin.timestamp_generator_actor.PrintMessageActor_CannotPrintMessage_Exception`.
+
+Интерфейс:
+```
+public interface PrintMessageActorWrapper {
+    IObject getMessage() throws ReadValueException;
+}
+```
