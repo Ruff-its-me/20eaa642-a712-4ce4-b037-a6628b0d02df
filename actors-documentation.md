@@ -772,7 +772,8 @@ public interface CheckFieldNotEmptyActorWrapper {
 ## check-if-using-document-actor CheckIfUsingDocumentActor CheckIfUsingDocumentActor
 
 По заданным имени коллекции, имени поля-массива и значения-строки, извлекает из базы список документов, содержащих в поле-масиве значение-строку.
-Если список наиденных докуентов пуст или поиск осуществить неу далось, бросает `ru.vp.admin.check_if_using_document_actor.CheckIfUsingDocumentActorException`.
+
+Если список наиденных докуентов не пуст или поиск осуществить не удалось, бросает `ru.vp.admin.check_if_using_document_actor.CheckIfUsingDocumentActorException`.
 
 Интерфейс:
 ```
@@ -787,5 +788,29 @@ public interface CheckIfUsingDocumentActorWrapper {
     // Искомое в поле-массиве значение
     String getFieldName() throws ReadValueException;
 
+}
+```
+
+## uniqueness-check-document-actor UniquenessCheckDocumentActor UniquenessCheckDocumentActor
+
+По заданным имени коллекции, имени поля, значению-строке и значению ID документа проверяет, имеются ли в коллекции документы, имеющие равное указанному значению-строке значение в заданном поле, но отличный от указанного ID идентификатор (имя поля идентификатора считается равным имени коллекции, конкатенированному с суффиксом "ID").
+
+Если список наиденных докуентов не пуст или поиск осуществить не удалось, бросает `ru.vp.admin.uniqueness_check_document_actor.UniquenessCheckDocumentActorException`.
+
+Интерфейс:
+```
+public interface UniquenessCheckDocumentActorWrapper {
+
+    // Имя коллекции, в которой будет осуществляться поиск документов.
+    String getCollectionName() throws ReadValueException;
+
+    // Искомое значение-строка
+    String getValueField() throws ReadValueException;
+
+    // Имя поля, по которому проиводится поиск значения-строки
+    String getFieldName() throws ReadValueException;
+
+    // ID документа
+    String getID() throws ReadValueException;
 }
 ```
