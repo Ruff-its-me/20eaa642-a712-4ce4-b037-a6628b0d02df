@@ -716,6 +716,33 @@ public interface CheckValueAbsenceInDbActorWrapper {
 `groupId` - идентификатор группы.
 
 
+## create-group-handle-user-info-transactional-actor-strategy CreateGroupHandleUserInfoTransactionalActorStrategy CreateGroupHandleUserInfoTransactionalActorStrategy
+
+Стратегия актора `handle-user-info-transactional-actor`
+(`HandleUserInfoTransactionalActor`), создающая группу.
+
+Бросает `ru.vp.admin.create_group_handle_user_info_transactional_actor_strategy.CreateGroupHandleUserInfoTransactionalActorStrategy_BadRequest_Exception` в случае некорректного формата запроса (не задано имя группы).
+Бросает `ru.vp.admin.create_group_handle_user_info_transactional_actor_strategy.CreateGroupHandleUserInfoTransactionalActorStrategy_NameExist_Exception` в случае, если группа с таким именем уже существует.
+
+Параметры стратегии (`getStrategyParams`):
+
+`{\"groupsCollectionName\": \"user_groups\",\"groupIdFieldName\": \"user_groupsID\",\"groupNameFieldName\": \"groupName\",\"groupRolesFieldName\": \"roles\",\"groupUsersFieldName\": \"users\"}`
+
+Содержание запроса (`getMessage()`):
+
+```
+{
+    "document": {
+        "groupName": "Some goup name!"
+        ...
+        see user group database entity format
+        ...
+    }
+}
+```
+
+`document` - документ группы.
+
 ## get-documents-by-filter-over-a-hundred-feature GetDocumentsByFilterOverAHundredFeature GetDocumentsByFilterOverAHundredActor
 
 `handler` обработчик извлекает все документы заданной коллекции(`даже если их больше 100`), допустимо использование фильтра.
