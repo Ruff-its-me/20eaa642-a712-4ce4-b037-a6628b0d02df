@@ -639,7 +639,7 @@ public interface CheckValueAbsenceInDbActorWrapper {
 }
 ```
 
-`<sessionIdFieldName>` - имя поля устанавливается в параметрах стратегии. Содержит идентификатор сессии пользователя.
+`\<sessionIdFieldName\>` - имя поля устанавливается в параметрах стратегии. Содержит идентификатор сессии пользователя.
 
 `messageMapId` - имя цепочки, для которой проводится авторизация.
 
@@ -764,6 +764,33 @@ public interface CheckValueAbsenceInDbActorWrapper {
 ```
 
 `document` - документ с идентификатором сессии.
+
+
+## authorize-without-roles-check-handle-user-info-session-actor-strategy AuthorizeWithoutRolesCheckHandleUserInfoActorStrategy AuthorizeWithoutRolesCheckHandleUserInfoActorStrategy
+
+Стратегия актора `handle-user-info-transactional-actor`
+(`HandleUserInfoTransactionalActor`), выполняющая следующие действия:
+1. Авторизация пользователя по id сессии
+1. Авторизация пользователя по времени жизни сессии.
+1. Авторизация пользователя по ролям/имени цепочки.
+1. В случае если пользователь авторизован - продление сессии на заданное количество времени с момента последней авторизации.
+
+Бросает `ru.vp.admin.authorize_without_roles_check_handle_user_info_session_actor_strategy.AuthorizeWithoutRolesCheckHandleUserInfoActorStrategy_NotAuthorized_Exception` в случае, если идентификатор сессии не задан.
+Бросает `ru.vp.admin.authorize_without_roles_check_handle_user_info_session_actor_strategy.AuthorizeWithoutRolesCheckHandleUserInfoActorStrategy_NotAuthorized_Exception` в случае, если активная сессия с указанным ID не наидена.
+
+Параметры стратегии (`getStrategyParams`):
+
+`{\"userIdFieldName\": \"usersID\",\"sessionIdFieldName\": \"sessionId\",\"sessionUserFieldName\": \"user\",\"messageMapIdFieldName\": \"messageMapId\",\"sessionsCollectionName\": \"session\",\"dbSessionIdFieldName\": \"sessionID\",\"sessionTimeToLiveFieldName\": \"sessionTTL\",\"sessionDurationInSeconds\": \"1800\",\"userRolesFieldName\": \"roles\"}`
+
+Содержание запроса (`getMessage()`):
+
+```
+{
+	"<sessionIdFieldName>": "eddd9277-5225-4ebc-9890-e59a05ed1363",
+}
+```
+`\<sessionIdFieldName\>` - имя поля устанавливается в параметрах стратегии. Содержит идентификатор сессии пользователя.
+
 
 ## get-documents-by-filter-over-a-hundred-feature GetDocumentsByFilterOverAHundredFeature GetDocumentsByFilterOverAHundredActor
 
