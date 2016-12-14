@@ -40,6 +40,12 @@
 - [create-collection-actor CreateCollectionActor CreateCollectionActor](#create-collection-actor-createcollectionactor-createcollectionactor)
 - [check-gateway-type-in-payment-method-matrix-actor CheckGatewayTypeInPaymentMethodMatrixActor CheckGatewayTypeInPaymentMethodMatrixActor](#check-gateway-type-in-payment-method-matrix-actor-checkgatewaytypeinpaymentmethodmatrixactor-checkgatewaytypeinpaymentmethodmatrixactor)
 - [change-status-field-enable-or-disable ChangeStatusFieldEnableOrDisableActor ChangeStatusFieldEnableOrDisableActor](#change-status-field-enable-or-disable-changestatusfieldenableordisableactor-changestatusfieldenableordisableactor)
+- [upsert-in-to-collection-actor ExceptionRecyclerActor ExceptionRecyclerActor] (#upsert-in-to-collection-actorExceptionRecyclerActorExceptionRecyclerActor)
+- [get-count-of-documents-actor GetCountOfDocumentsActor GetCountOfDocumentsActor] (#get-count-of-documents-actorGetCountOfDocumentsActorGetCountOfDocumentsActor)
+- [get-documents-by-filter-actor GetDocumentsByFilterActor GetDocumentsByFilterActor] (#get-documents-by-filter-actorGetDocumentsByFilterActorGetDocumentsByFilterActor)
+- [authentication-actor AuthenticationActor AuthenticationActor] (#authentication-actorAuthenticationActorAuthenticationActor)
+- [generate-session-id-actor GenerateSessionIdActor GenerateSessionIdActor] (#generate-session-id-actorGenerateSessionIdActorGenerateSessionIdActor)
+
 ## get-session-actor GetSessionActor GetSessionActo
 
 По данному идентификатору сессии извлекает из базы данных документ с сессией.
@@ -1174,5 +1180,90 @@ public interface ChangeStatusFieldEnableOrDisableActorWrapper {
     String getСheckedField() throws ReadValueException;
     // Документ с обнавлённым полем
     void setDocument(IObject document) throws ChangeValueException;
+}
+```
+## upsert-in-to-collection-actor ExceptionRecyclerActor ExceptionRecyclerActor
+Актор выдачи сообщения об ошибке. Если что-то идет не так, выбрасывает `ru.vp.admin.exception_recycler_actor.ExceptionRecyclerActorException`.
+
+Интерфейс:
+```
+public interface ExceptionRecyclerActorWrapper {
+    // Строка, содержащая сообщение с описанием ошибки.
+    String getErrorDescription() throws ReadValueException;
+
+    // Получает статус ответа
+    String getSuccessStatus() throws ReadValueException;
+
+    // Устанавливает описание ошибки
+    void setError(String message) throws ChangeValueException;
+
+    // Устанавливает статус ответа 
+    void setSuccess(boolean message) throws ChangeValueException;
+}
+```
+
+## get-count-of-documents-actor GetCountOfDocumentsActor GetCountOfDocumentsActor
+Актор подсчитывает число документов, выбранных по фильтру. Если попытка обращения к базе не удалась, обработчик выбрасывает исключение `ru.vp.admin.get_count_of_documents_actor.GetCountOfDocumentsException`.
+
+Интерфейс:
+```
+public interface IGetCountOfDocumentsWrapper {
+
+    // Имя коллекции для поиска
+    String getCollectionName() throws ReadValueException;
+
+    // Фильтр для поиска документов в коллекции
+    String getFilter() throws ReadValueException;
+
+    // Количество найденных документов, удовлетворяющих фильтру
+    void setCount(Long count) throws ChangeValueException;
+}
+```
+
+## get-documents-by-filter-actor GetDocumentsByFilterActor GetDocumentsByFilterActor
+Получает список документов из базы по фильтру, постранично. Если что-то пошло не так - выбрасывает исключение `ru.vp.admin.get_documents_by_filter_actor.GetDocumentsByFilterActorException`.
+Интерфейс:
+```
+public interface GetDocumentsByFilterActorWrapper {
+	  // Строка, по которой будет осуществляться фильтрация.
+    String getFilter() throws ReadValueException;
+
+	  // Строка с размером страницы (количество записей на странице)
+    String getPageSize() throws ReadValueException;
+
+	  // Смещение
+    String getPageNumber() throws ReadValueException;
+
+	  // Имя коллекции, в которой будет осуществляться поиск отфильтрованных значений(если фильтр задан).
+    String getCollectionName() throws ReadValueException;
+
+	  // Строка, по которой будет определяться направление сортировки
+    String getSort() throws ReadValueException;
+
+	  // Метод записывающий результат возвращенный из коллекции, необходим для записи извлеченного массива из базы.
+    void setDocument(List<IObject> document) throws ChangeValueException;
+}
+```
+
+## authentication-actor AuthenticationActor AuthenticationActor
+Актор валидирует созданную сессию. Если какой-либо из параметров не может быть прочитан, обработчик бросает `info.smart_tools.smartactors.task.interfaces.itask.exception.TaskExecutionException`. Если данные не соответствуют данным сессии или имеют значение null, обработчик бросает исключение `ru.vp.admin.authorization.exception.AuthFailException`.
+Интерфейс:
+``` 
+public interface AuthenticationMessage {
+    // Возвращает хешированный пароль из http-запроса.
+    String getPassword() throws ReadValueException;
+
+    // Возвращает хешированный пароль из базы данных
+    String getHashPassword() throws ReadValueException;
+}
+```
+
+## generate-session-id-actor GenerateSessionIdActor GenerateSessionIdActor
+Актор генерирует уникальный идентификатор сессии
+Интерфейс:
+```
+public interface GenerateSessionIdActorWrapper {
+    // Устанавливает Id сессии
+    void setSessionId(String sessionId) throws ChangeValueException;
 }
 ```
