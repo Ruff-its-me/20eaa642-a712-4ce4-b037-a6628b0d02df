@@ -5,7 +5,7 @@
 - [actors.user_role_check UserRoleCheck UserRoleCheck](#actors-user_role_check-userrolecheck-userrolecheck)
 - [upsert-document-actor UpsertDocumentActor UpsertDocumentActor](#upsert-document-actor-upsertdocumentactor-upsertdocumentactor)
 - [delete-from-cached-collection-actor DeleteFromCachedCollectionActor DeleteFromCachedCollectionActor](#delete-from-cached-collection-actor-deletefromcachedcollectionactor-deletefromcachedcollectionactor)
-- [delete-document-from-collection-actor DeleteDocumentFromCollectionActor DeleteFromCollectionActor](#delete-document-from-collection-actor-deletedocumentfromcollectionactor-deletedocumentfromcollectionactor)
+- [delete-document-from-collection-actor DeleteDocumentFromCollectionActor DeleteDocumentFromCollectionActor](#delete-document-from-collection-actor-deletedocumentfromcollectionactor-deletedocumentfromcollectionactor)
 - [upsert-in-to-collection-actor UpsertInToCollectionActor UpsertInToCollectionActor](#upsert-in-to-collection-actor-upsertintocollectionactor-upsertintocollectionactor)
 - [timestamp-generator-actor TimestampGeneratorActor TimestampGeneratorActor](#timestamp-generator-actor-timestampgeneratoractor-timestampgeneratoractor)
 - [get-document-by-id-actor GetDocumentByIdActor GetDocumentByIdActor](#get-document-by-id-actor-getdocumentbyidactor-getdocumentbyidactor)
@@ -22,31 +22,45 @@
 - [upsert-user-handle-user-info-transactional-actor-strategy UpsertUserHandleUserInfoTransactionalActorStrategy UpsertUserHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)](#upsert-user-handle-user-info-transactional-actor-strategy-upsertuserhandleuserinfotransactionalactorstrategy-upsertuserhandleuserinfotransactionalactorstrategy-implements-ihandleuserinfotransactionalstrategy)
 - [upsert-group-handle-user-info-transactional-actor-strategy UpsertGroupHandleUserInfoTransactionalActorStrategy UpsertGroupHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)](#upsert-group-handle-user-info-transactional-actor-strategy-upsertgrouphandleuserinfotransactionalactorstrategy-upsertgrouphandleuserinfotransactionalactorstrategy-implements-ihandleuserinfotransactionalstrategy)
 - [remove-user-handle-user-info-transactional-actor-strategy RemoveUserHandleUserInfoTransactionalActorStrategy RemoveUserHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)](#remove-user-handle-user-info-transactional-actor-strategy-removeuserhandleuserinfotransactionalactorstrategy-removeuserhandleuserinfotransactionalactorstrategy-implements-ihandleuserinfotransactionalstrategy)
-- [remove-role-from-group-handle-user-info-transactional-actor-strategy RemoveRoleFromGroupHandleUserInfoTransactionalActorStrategy RemoveRoleFromGroupHandleUserInfoTransactionalActorStrategy](#remove-role-from-group-handle-user-info-transactional-actor-strategy-removerolefromgrouphandleuserinfotransactionalactorstrategy-removerolefromgrouphandleuserinfotransactionalactorstrategy)
-- [edit-user-password-handle-user-info-transactional-actor-strategy EditUserPasswordHandleUserInfoTransactionalActorStrategy EditUserPasswordHandleUserInfoTransactionalActorStrategy](#edit-user-password-handle-user-info-transactional-actor-strategy-edituserpasswordhandleuserinfotransactionalactorstrategy-edituserpasswordhandleuserinfotransactionalactorstrategy)
-- [edit-own-password-handle-user-info-transactional-actor-strategy EditOwnPasswordHandleUserInfoTransactionalActorStrategy EditOwnPasswordHandleUserInfoTransactionalActorStrategy](#edit-own-password-handle-user-info-transactional-actor-strategy-editownpasswordhandleuserinfotransactionalactorstrategy-editownpasswordhandleuserinfotransactionalactorstrategy)
-- [edit-own-password-handle-user-info-transactional-actor-strategy EditOwnPasswordHandleUserInfoTransactionalActorStrategy EditOwnPasswordHandleUserInfoTransactionalActorStrategy](#edit-own-password-handle-user-info-transactional-actor-strategy-editownpasswordhandleuserinfotransactionalactorstrategy-editownpasswordhandleuserinfotransactionalactorstrategy)
-- [authenticate-handle-user-info-transactional-actor-strategy AuthenticateHandleUserInfoTransactionalActorStrategy AuthenticateHandleUserInfoTransactionalActorStrategy](#authenticate-handle-user-info-transactional-actor-strategy-authenticatehandleuserinfotransactionalactorstrategy-authenticatehandleuserinfotransactionalactorstrategy)
-- [add-user-to-group-handle-user-info-transactional-actor-strategy AddUserToGroupHandleUserInfoTransactionalActorStrategy AddUserToGroupHandleUserInfoTransactionalActorStrategy](#add-user-to-group-handle-user-info-transactional-actor-strategy-addusertogrouphandleuserinfotransactionalactorstrategy-addusertogrouphandleuserinfotransactionalactorstrategy)
-- [add-role-to-group-handle-user-info-transactional-actor-strategy AddRoleToGroupHandleUserInfoTransactionalActorStrategy AddRoleToGroupHandleUserInfoTransactionalActorStrategy](#add-role-to-group-handle-user-info-transactional-actor-strategy-addroletogrouphandleuserinfotransactionalactorstrategy-addroletogrouphandleuserinfotransactionalactorstrategy)
-- [get-documents-by-filter-over-a-hundred-feature GetDocumentsByFilterOverAHundredFeature GetDocumentsByFilterOverAHundredFeature](#get-documents-by-filter-over-a-hundred-feature-getdocumentsbyfilteroverahundredfeature-getdocumentsbyfilteroverahundredfeature)
-- [check-field-not-empty-actor  CheckFieldNotEmptyActor CheckFieldNotEmptyActor](#check-field-not-empty-actor-checkfieldnotemptyactor-checkfieldnotemptyactor)
+- [remove-role-from-group-handle-user-info-transactional-actor-strategy RemoveRoleFromGroupHandleUserInfoTransactionalActorStrategy RemoveRoleFromGroupHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)](#remove-role-from-group-handle-user-info-transactional-actor-strategy-removerolefromgrouphandleuserinfotransactionalactorstrategy-removerolefromgrouphandleuserinfotransactionalactorstrategy-implements-ihandleuserinfotransactionalstrategy)
+- [edit-user-password-handle-user-info-transactional-actor-strategy EditUserPasswordHandleUserInfoTransactionalActorStrategy EditUserPasswordHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)](#edit-user-password-handle-user-info-transactional-actor-strategy-edituserpasswordhandleuserinfotransactionalactorstrategy-edituserpasswordhandleuserinfotransactionalactorstrategy-implements-ihandleuserinfotransactionalstrategy)
+- [edit-own-password-handle-user-info-transactional-actor-strategy EditOwnPasswordHandleUserInfoTransactionalActorStrategy EditOwnPasswordHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)](#edit-own-password-handle-user-info-transactional-actor-strategy-editownpasswordhandleuserinfotransactionalactorstrategy-editownpasswordhandleuserinfotransactionalactorstrategy-implements-ihandleuserinfotransactionalstrategy)
+- [edit-own-password-handle-user-info-transactional-actor-strategy EditOwnPasswordHandleUserInfoTransactionalActorStrategy EditOwnPasswordHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)](#edit-own-password-handle-user-info-transactional-actor-strategy-editownpasswordhandleuserinfotransactionalactorstrategy-editownpasswordhandleuserinfotransactionalactorstrategy-implements-ihandleuserinfotransactionalstrategy)
+- [authorize-handle-user-info-transactional-actor-strategy AuthorizeHandleUserInfoTransactionalActorStrategy AuthorizeHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)](#authorize-handle-user-info-transactional-actor-strategy-authorizehandleuserinfotransactionalactorstrategy-authorizehandleuserinfotransactionalactorstrategy-implements-ihandleuserinfotransactionalstrategy)
+- [authenticate-handle-user-info-transactional-actor-strategy AuthenticateHandleUserInfoTransactionalActorStrategy AuthenticateHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)](#authenticate-handle-user-info-transactional-actor-strategy-authenticatehandleuserinfotransactionalactorstrategy-authenticatehandleuserinfotransactionalactorstrategy-implements-ihandleuserinfotransactionalstrategy)
+- [update-group-handle-user-info-transactional-actor-strategy UpdateGroupHandleUserInfoTransactionalActorStrategy UpdateGroupHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)](#update-group-handle-user-info-transactional-actor-strategy-updategrouphandleuserinfotransactionalactorstrategy-updategrouphandleuserinfotransactionalactorstrategy-implements-ihandleuserinfotransactionalstrategy)
+- [add-user-to-group-handle-user-info-transactional-actor-strategy AddUserToGroupHandleUserInfoTransactionalActorStrategy AddUserToGroupHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)](#add-user-to-group-handle-user-info-transactional-actor-strategy-addusertogrouphandleuserinfotransactionalactorstrategy-addusertogrouphandleuserinfotransactionalactorstrategy-implements-ihandleuserinfotransactionalstrategy)
+- [create-user-handle-user-info-transactional-actor-strategy CreateUserHandleUserInfoTransactionalActorStrategy CreateUserHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)](#create-user-handle-user-info-transactional-actor-strategy-createuserhandleuserinfotransactionalactorstrategy-createuserhandleuserinfotransactionalactorstrategy-implements-ihandleuserinfotransactionalstrategy)
+- [update-user-handle-user-info-transactional-actor-strategy UpdateUserHandleUserInfoTransactionalActorStrategy UpdateUserHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)](#update-user-handle-user-info-transactional-actor-strategy-updateuserhandleuserinfotransactionalactorstrategy-updateuserhandleuserinfotransactionalactorstrategy-implements-ihandleuserinfotransactionalstrategy)
+- [add-role-to-group-handle-user-info-transactional-actor-strategy AddRoleToGroupHandleUserInfoTransactionalActorStrategy AddRoleToGroupHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)](#add-role-to-group-handle-user-info-transactional-actor-strategy-addroletogrouphandleuserinfotransactionalactorstrategy-addroletogrouphandleuserinfotransactionalactorstrategy-implements-ihandleuserinfotransactionalstrategy)
+- [create-group-handle-user-info-transactional-actor-strategy CreateGroupHandleUserInfoTransactionalActorStrategy CreateGroupHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)](#create-group-handle-user-info-transactional-actor-strategy-creategrouphandleuserinfotransactionalactorstrategy-creategrouphandleuserinfotransactionalactorstrategy-implements-ihandleuserinfotransactionalstrategy)
+- [purge-session-handle-user-info-transactional-actor-strategy PurgeSessionHandleUserInfoTransactionalActorStrategy PurgeSessionHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)](#purge-session-handle-user-info-transactional-actor-strategy-purgesessionhandleuserinfotransactionalactorstrategy-purgesessionhandleuserinfotransactionalactorstrategy-implements-ihandleuserinfotransactionalstrategy)
+- [authorize-without-roles-check-handle-user-info-session-actor-strategy AuthorizeWithoutRolesCheckHandleUserInfoActorStrategy AuthorizeWithoutRolesCheckHandleUserInfoActorStrategy (implements IHandleUserInfoTransactionalStrategy)](#authorize-without-roles-check-handle-user-info-session-actor-strategy-authorizewithoutrolescheckhandleuserinfoactorstrategy-authorizewithoutrolescheckhandleuserinfoactorstrategy-implements-ihandleuserinfotransactionalstrategy)
+- [get-documents-by-filter-over-a-hundred-feature GetDocumentsByFilterOverAHundredFeature GetDocumentsByFilterOverAHundredActor](#get-documents-by-filter-over-a-hundred-feature-getdocumentsbyfilteroverahundredfeature-getdocumentsbyfilteroverahundredactor)
+- [check-gateway-status-in-gateway-types-actor CheckGatewayStatusInGatewayTypesActor CheckGatewayStatusInGatewayTypesActor](#check-gateway-status-in-gateway-types-actor-checkgatewaystatusingatewaytypesactor-checkgatewaystatusingatewaytypesactor)
+- [check-field-not-empty-actor CheckFieldNotEmptyActor CheckFieldNotEmptyActor](#check-field-not-empty-actor-checkfieldnotemptyactor-checkfieldnotemptyactor)
+- [check-if-using-document-actor CheckIfUsingDocumentActor CheckIfUsingDocumentActor](#check-if-using-document-actor-checkifusingdocumentactor-checkifusingdocumentactor)
+- [uniqueness-check-document-actor UniquenessCheckDocumentActor UniquenessCheckDocumentActor](#uniqueness-check-document-actor-uniquenesscheckdocumentactor-uniquenesscheckdocumentactor)
+- [get-session-info-by-sessionId-actor GetSessionInfoBySessionIdActor GetSessionInfoBySessionIdActor](#get-session-info-by-sessionid-actor-getsessioninfobysessionidactor-getsessioninfobysessionidactor)
 - [transform-actor TransformActor TransformActor](#transform-actor-transformactor-transformactor)
 - [print-message-actor PrintMessageActor PrintMessageActor](#print-message-actor-printmessageactor-printmessageactor)
-- [get-document-by-id-actor GetDocumentByIdActor GetDocumentByIdActor](#get-document-by-id-actor-getcocumentbyidactor-getdocumentbyidactor)
+- [get-document-by-id-actor GetDocumentByIdActor GetDocumentByIdActor](#get-document-by-id-actor-getdocumentbyidactor-getdocumentbyidactor)
 - [upsert-session-for-users-actor UpsertSessionForUsersActor UpsertSessionForUsersActor](#upsert-session-for-users-actor-upsertsessionforusersactor-upsertsessionforusersactor)
 - [hash-password-create-actor HashPasswordCreateActor HashPasswordCreateActor](#hash-password-create-actor-hashpasswordcreateactor-hashpasswordcreateactor)
 - [get-document-list-by-id-list-actor GetDocumentListByIdListActor GetDocumentListByIdListActor](#get-document-list-by-id-list-actor-getdocumentlistbyidlistactor-getdocumentlistbyidlistactor)
 - [create-collection-actor CreateCollectionActor CreateCollectionActor](#create-collection-actor-createcollectionactor-createcollectionactor)
 - [check-gateway-type-in-payment-method-matrix-actor CheckGatewayTypeInPaymentMethodMatrixActor CheckGatewayTypeInPaymentMethodMatrixActor](#check-gateway-type-in-payment-method-matrix-actor-checkgatewaytypeinpaymentmethodmatrixactor-checkgatewaytypeinpaymentmethodmatrixactor)
 - [change-status-field-enable-or-disable ChangeStatusFieldEnableOrDisableActor ChangeStatusFieldEnableOrDisableActor](#change-status-field-enable-or-disable-changestatusfieldenableordisableactor-changestatusfieldenableordisableactor)
-- [upsert-in-to-collection-actor ExceptionRecyclerActor ExceptionRecyclerActor] (#upsert-in-to-collection-actorExceptionRecyclerActorExceptionRecyclerActor)
-- [get-count-of-documents-actor GetCountOfDocumentsActor GetCountOfDocumentsActor] (#get-count-of-documents-actorGetCountOfDocumentsActorGetCountOfDocumentsActor)
-- [get-documents-by-filter-actor GetDocumentsByFilterActor GetDocumentsByFilterActor] (#get-documents-by-filter-actorGetDocumentsByFilterActorGetDocumentsByFilterActor)
-- [authentication-actor AuthenticationActor AuthenticationActor] (#authentication-actorAuthenticationActorAuthenticationActor)
-- [generate-session-id-actor GenerateSessionIdActor GenerateSessionIdActor] (#generate-session-id-actorGenerateSessionIdActorGenerateSessionIdActor)
+- [upsert-in-to-collection-actor ExceptionRecyclerActor ExceptionRecyclerActor](#upsert-in-to-collection-actor-exceptionrecycleractor-exceptionrecycleractor)
+- [get-count-of-documents-actor GetCountOfDocumentsActor GetCountOfDocumentsActor](#get-count-of-documents-actor-getcountofdocumentsactor-getcountofdocumentsactor)
+- [get-documents-by-filter-actor GetDocumentsByFilterActor GetDocumentsByFilterActor](#get-documents-by-filter-actor-getdocumentsbyfilteractor-getdocumentsbyfilteractor)
+- [authentication-actor AuthenticationActor AuthenticationActor](#authentication-actor-authenticationactor-authenticationactor)
+- [generate-session-id-actor GenerateSessionIdActor GenerateSessionIdActor](#generate-session-id-actor-generatesessionidactor-generatesessionidactor)
 
-## get-session-actor GetSessionActor GetSessionActo
+
+
+
+## get-session-actor GetSessionActor GetSessionActor
 
 По данному идентификатору сессии извлекает из базы данных документ с сессией.
 Если сессия не наидена, бросает `ru.vp.studgate.get_session_actor.GetSessionException`.
@@ -519,7 +533,7 @@ public interface CheckValueAbsenceInDbActorWrapper {
 
 `userId` - идентификатор пользователя для удаления.
 
-## remove-role-from-group-handle-user-info-transactional-actor-strategy RemoveRoleFromGroupHandleUserInfoTransactionalActorStrategy RemoveRoleFromGroupHandleUserInfoTransactionalActorStrategy
+## remove-role-from-group-handle-user-info-transactional-actor-strategy RemoveRoleFromGroupHandleUserInfoTransactionalActorStrategy RemoveRoleFromGroupHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)
 Стратегия актора `handle-user-info-transactional-actor`
 (`HandleUserInfoTransactionalActor`), удаляющая роль из группы.
 
@@ -541,7 +555,7 @@ public interface CheckValueAbsenceInDbActorWrapper {
 `role` - роль для удаления .
 
 
-## edit-user-password-handle-user-info-transactional-actor-strategy EditUserPasswordHandleUserInfoTransactionalActorStrategy EditUserPasswordHandleUserInfoTransactionalActorStrategy
+## edit-user-password-handle-user-info-transactional-actor-strategy EditUserPasswordHandleUserInfoTransactionalActorStrategy EditUserPasswordHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)
 Стратегия актора `handle-user-info-transactional-actor`
 (`HandleUserInfoTransactionalActor`), изменяющая пароль пользователя.
 Может использоваться администратором для смены пароля пользователям.
@@ -568,7 +582,7 @@ public interface CheckValueAbsenceInDbActorWrapper {
 `newPassword` - новый пароль.
 
 
-## edit-own-password-handle-user-info-transactional-actor-strategy EditOwnPasswordHandleUserInfoTransactionalActorStrategy EditOwnPasswordHandleUserInfoTransactionalActorStrategy
+## edit-own-password-handle-user-info-transactional-actor-strategy EditOwnPasswordHandleUserInfoTransactionalActorStrategy EditOwnPasswordHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)
 Стратегия актора `handle-user-info-transactional-actor`
 (`HandleUserInfoTransactionalActor`), изменяющая пароль пользователя с проверкой старого пароля.
 Может использоваться пользователем для смены пароля самому себе.
@@ -598,7 +612,7 @@ public interface CheckValueAbsenceInDbActorWrapper {
 `newPassword` - новый пароль пользователя.
 
 
-## edit-own-password-handle-user-info-transactional-actor-strategy EditOwnPasswordHandleUserInfoTransactionalActorStrategy EditOwnPasswordHandleUserInfoTransactionalActorStrategy
+## edit-own-password-handle-user-info-transactional-actor-strategy EditOwnPasswordHandleUserInfoTransactionalActorStrategy EditOwnPasswordHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)
 Стратегия актора `handle-user-info-transactional-actor`
 (`HandleUserInfoTransactionalActor`), изменяющая пароль пользователя с проверкой старого пароля.
 Может использоваться пользователем для смены пароля самому себе.
@@ -627,7 +641,7 @@ public interface CheckValueAbsenceInDbActorWrapper {
 
 `newPassword` - новый пароль пользователя.
 
-## authorize-handle-user-info-transactional-actor-strategy AuthorizeHandleUserInfoTransactionalActorStrategy AuthorizeHandleUserInfoTransactionalActorStrategy
+## authorize-handle-user-info-transactional-actor-strategy AuthorizeHandleUserInfoTransactionalActorStrategy AuthorizeHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)
 Стратегия актора `handle-user-info-transactional-actor`
 (`HandleUserInfoTransactionalActor`), выполняющая следующие действия:
 1. Авторизация пользователя по id сессии
@@ -656,7 +670,7 @@ public interface CheckValueAbsenceInDbActorWrapper {
 
 `messageMapId` - имя цепочки, для которой проводится авторизация.
 
-## authenticate-handle-user-info-transactional-actor-strategy AuthenticateHandleUserInfoTransactionalActorStrategy AuthenticateHandleUserInfoTransactionalActorStrategy
+## authenticate-handle-user-info-transactional-actor-strategy AuthenticateHandleUserInfoTransactionalActorStrategy AuthenticateHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)
 Стратегия актора `handle-user-info-transactional-actor`
 (`HandleUserInfoTransactionalActor`), выполняющая аутентификацию по
 паре логин/пароль и генерирующая сессию в случае успешной
@@ -685,7 +699,7 @@ public interface CheckValueAbsenceInDbActorWrapper {
 
 `password` - цепочка пользователя.
 
-## update-group-handle-user-info-transactional-actor-strategy UpdateGroupHandleUserInfoTransactionalActorStrategy UpdateGroupHandleUserInfoTransactionalActorStrategy
+## update-group-handle-user-info-transactional-actor-strategy UpdateGroupHandleUserInfoTransactionalActorStrategy UpdateGroupHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)
 Стратегия актора `handle-user-info-transactional-actor`
 (`HandleUserInfoTransactionalActor`), обновляющая имя группы.
 
@@ -712,7 +726,7 @@ public interface CheckValueAbsenceInDbActorWrapper {
 `\<groupIdFieldName\>` - идентификатор переименовываемой группы.
 
 
-## add-user-to-group-handle-user-info-transactional-actor-strategy AddUserToGroupHandleUserInfoTransactionalActorStrategy AddUserToGroupHandleUserInfoTransactionalActorStrategy
+## add-user-to-group-handle-user-info-transactional-actor-strategy AddUserToGroupHandleUserInfoTransactionalActorStrategy AddUserToGroupHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)
 Стратегия актора `handle-user-info-transactional-actor`
 (`HandleUserInfoTransactionalActor`), добавляющая пользователя в группу.
 
@@ -734,7 +748,7 @@ public interface CheckValueAbsenceInDbActorWrapper {
 `groupId` - идентификатор группы.
 
 
-## create-user-handle-user-info-transactional-actor-strategy CreateUserHandleUserInfoTransactionalActorStrategy CreateUserHandleUserInfoTransactionalActorStrategy
+## create-user-handle-user-info-transactional-actor-strategy CreateUserHandleUserInfoTransactionalActorStrategy CreateUserHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)
 
 Стратегия актора `handle-user-info-transactional-actor`
 (`HandleUserInfoTransactionalActor`), создающая нового пользователя на сервере.
@@ -762,7 +776,7 @@ public interface CheckValueAbsenceInDbActorWrapper {
 `userPasswordFieldName` - пароль пользователя.
 
 
-## update-user-handle-user-info-transactional-actor-strategy UpdateUserHandleUserInfoTransactionalActorStrategy UpdateUserHandleUserInfoTransactionalActorStrategy
+## update-user-handle-user-info-transactional-actor-strategy UpdateUserHandleUserInfoTransactionalActorStrategy UpdateUserHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)
 
 Стратегия актора `handle-user-info-transactional-actor`
 (`HandleUserInfoTransactionalActor`), обновляет данные пользователя.
@@ -791,7 +805,7 @@ public interface CheckValueAbsenceInDbActorWrapper {
 `userIdFieldName` - пароль пользователя.
 
 
-## add-role-to-group-handle-user-info-transactional-actor-strategy AddRoleToGroupHandleUserInfoTransactionalActorStrategy AddRoleToGroupHandleUserInfoTransactionalActorStrategy
+## add-role-to-group-handle-user-info-transactional-actor-strategy AddRoleToGroupHandleUserInfoTransactionalActorStrategy AddRoleToGroupHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)
 
 Стратегия актора `handle-user-info-transactional-actor`
 (`HandleUserInfoTransactionalActor`), добавляющая пользователя в группу.
@@ -814,7 +828,7 @@ public interface CheckValueAbsenceInDbActorWrapper {
 `groupId` - идентификатор группы.
 
 
-## create-group-handle-user-info-transactional-actor-strategy CreateGroupHandleUserInfoTransactionalActorStrategy CreateGroupHandleUserInfoTransactionalActorStrategy
+## create-group-handle-user-info-transactional-actor-strategy CreateGroupHandleUserInfoTransactionalActorStrategy CreateGroupHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)
 
 Стратегия актора `handle-user-info-transactional-actor`
 (`HandleUserInfoTransactionalActor`), создающая группу.
@@ -842,7 +856,7 @@ public interface CheckValueAbsenceInDbActorWrapper {
 `document` - документ группы.
 
 
-## purge-session-handle-user-info-transactional-actor-strategy PurgeSessionHandleUserInfoTransactionalActorStrategy PurgeSessionHandleUserInfoTransactionalActorStrategy
+## purge-session-handle-user-info-transactional-actor-strategy PurgeSessionHandleUserInfoTransactionalActorStrategy PurgeSessionHandleUserInfoTransactionalActorStrategy (implements IHandleUserInfoTransactionalStrategy)
 
 Стратегия актора `handle-user-info-transactional-actor`
 (`HandleUserInfoTransactionalActor`), удаляющая сессию по её id.
@@ -864,7 +878,7 @@ public interface CheckValueAbsenceInDbActorWrapper {
 `document` - документ с идентификатором сессии.
 
 
-## authorize-without-roles-check-handle-user-info-session-actor-strategy AuthorizeWithoutRolesCheckHandleUserInfoActorStrategy AuthorizeWithoutRolesCheckHandleUserInfoActorStrategy
+## authorize-without-roles-check-handle-user-info-session-actor-strategy AuthorizeWithoutRolesCheckHandleUserInfoActorStrategy AuthorizeWithoutRolesCheckHandleUserInfoActorStrategy (implements IHandleUserInfoTransactionalStrategy)
 
 Стратегия актора `handle-user-info-transactional-actor`
 (`HandleUserInfoTransactionalActor`), выполняющая следующие действия:
@@ -911,7 +925,7 @@ public interface GetDocumentsByFilterOverAHundredActorWrapper {
 ```
 
 
-## check-gateway-status-in-gateway-types-actor  CheckGatewayStatusInGatewayTypesActor CheckGatewayStatusInGatewayTypesActor
+## check-gateway-status-in-gateway-types-actor CheckGatewayStatusInGatewayTypesActor CheckGatewayStatusInGatewayTypesActor
 `handler` проверяет, включен ли шлюз, если хотите применить его к методу оплаты.
 
 Если пытаетесь использовать выключенный шлюз, то бросает исключение `ru.vp.admin.check_gateway_status_in_gateway_types_actor.CheckGatewayStatusInGatewayTypesActorException`.
@@ -929,7 +943,7 @@ public interface CheckGatewayStatusInGatewayTypesActorWrapper {
 ```
 
 
-## check-field-not-empty-actor  CheckFieldNotEmptyActor CheckFieldNotEmptyActor
+## check-field-not-empty-actor CheckFieldNotEmptyActor CheckFieldNotEmptyActor
 `handler` проверяет,  поле != null и поле != "".
 
 Если поле пустое или не определено, то выбрасывается исключение `ru.vp.admin.check_field_not_empty_actor.CheckFieldNotEmptyActorException`.
@@ -1178,7 +1192,7 @@ public interface ChangeStatusFieldEnableOrDisableActorWrapper {
     String getFieldNameID() throws ReadValueException;
     // Поле для проверки
     String getСheckedField() throws ReadValueException;
-    // Документ с обнавлённым полем
+    // Документ с обновлённым полем
     void setDocument(IObject document) throws ChangeValueException;
 }
 ```
