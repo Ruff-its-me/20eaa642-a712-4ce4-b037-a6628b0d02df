@@ -31,9 +31,16 @@
 - [add-role-to-group-handle-user-info-transactional-actor-strategy AddRoleToGroupHandleUserInfoTransactionalActorStrategy AddRoleToGroupHandleUserInfoTransactionalActorStrategy](#add-role-to-group-handle-user-info-transactional-actor-strategy-addroletogrouphandleuserinfotransactionalactorstrategy-addroletogrouphandleuserinfotransactionalactorstrategy)
 - [get-documents-by-filter-over-a-hundred-feature GetDocumentsByFilterOverAHundredFeature GetDocumentsByFilterOverAHundredFeature](#get-documents-by-filter-over-a-hundred-feature-getdocumentsbyfilteroverahundredfeature-getdocumentsbyfilteroverahundredfeature)
 - [check-field-not-empty-actor  CheckFieldNotEmptyActor CheckFieldNotEmptyActor](#check-field-not-empty-actor-checkfieldnotemptyactor-checkfieldnotemptyactor)
-
-
-## get-session-actor GetSessionActor GetSessionActor
+- [transform-actor TransformActor TransformActor](#transform-actor-transformactor-transformactor)
+- [print-message-actor PrintMessageActor PrintMessageActor](#print-message-actor-printmessageactor-printmessageactor)
+- [get-document-by-id-actor GetDocumentByIdActor GetDocumentByIdActor](#get-document-by-id-actor-getcocumentbyidactor-getdocumentbyidactor)
+- [upsert-session-for-users-actor UpsertSessionForUsersActor UpsertSessionForUsersActor](#upsert-session-for-users-actor-upsertsessionforusersactor-upsertsessionforusersactor)
+- [hash-password-create-actor HashPasswordCreateActor HashPasswordCreateActor](#hash-password-create-actor-hashpasswordcreateactor-hashpasswordcreateactor)
+- [get-document-list-by-id-list-actor GetDocumentListByIdListActor GetDocumentListByIdListActor](#get-document-list-by-id-list-actor-getdocumentlistbyidlistactor-getdocumentlistbyidlistactor)
+- [create-collection-actor CreateCollectionActor CreateCollectionActor](#create-collection-actor-createcollectionactor-createcollectionactor)
+- [check-gateway-type-in-payment-method-matrix-actor CheckGatewayTypeInPaymentMethodMatrixActor CheckGatewayTypeInPaymentMethodMatrixActor](#check-gateway-type-in-payment-method-matrix-actor-checkgatewaytypeinpaymentmethodmatrixactor-checkgatewaytypeinpaymentmethodmatrixactor)
+- [change-status-field-enable-or-disable ChangeStatusFieldEnableOrDisableActor ChangeStatusFieldEnableOrDisableActor](#change-status-field-enable-or-disable-changestatusfieldenableordisableactor-changestatusfieldenableordisableactor)
+## get-session-actor GetSessionActor GetSessionActo
 
 По данному идентификатору сессии извлекает из базы данных документ с сессией.
 Если сессия не наидена, бросает `ru.vp.studgate.get_session_actor.GetSessionException`.
