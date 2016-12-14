@@ -1148,3 +1148,24 @@ public interface CheckGatewayTypeInPaymentMethodMatrixActorWrapper {
     List<IObject> getPaymentMatrix() throws ReadValueException;
 }
 ```
+
+## change-status-field-enable-or-disable ChangeStatusFieldEnableOrDisableActor ChangeStatusFieldEnableOrDisableActor
+Меняет статус поля.
+
+Если поле не поменялось, или небыло найденно, то выетает `ru.vp.admin.change_status_field_enable_or_disable.ChangeStatusFieldEnableOrDisableActor`
+
+Интерфейс:
+```
+public interface ChangeStatusFieldEnableOrDisableActorWrapper {
+    // Имя коллекции.
+    String getCollectionName() throws ReadValueException;
+    // Имя документа
+    String getDocumentID() throws ReadValueException;
+    // Ид поля для поиска в базе
+    String getFieldNameID() throws ReadValueException;
+    // Поле для проверки
+    String getСheckedField() throws ReadValueException;
+    // Документ с обнавлённым полем
+    void setDocument(IObject document) throws ChangeValueException;
+}
+```

@@ -19,8 +19,8 @@ UpsertSessionForUsersActor +
 HashPasswordCreateActor +
 GetDocumentListByIdListActor +
 CreateCollectionActor +
-CheckGatewayTypeInPaymentMethodMatrixActor
-ChangeStatusFieldEnableOrDisableActor
+CheckGatewayTypeInPaymentMethodMatrixActor +
+ChangeStatusFieldEnableOrDisableActor +
 
 
 Vladimir
