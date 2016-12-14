@@ -51,7 +51,7 @@
 - [create-collection-actor CreateCollectionActor CreateCollectionActor](#create-collection-actor-createcollectionactor-createcollectionactor)
 - [check-gateway-type-in-payment-method-matrix-actor CheckGatewayTypeInPaymentMethodMatrixActor CheckGatewayTypeInPaymentMethodMatrixActor](#check-gateway-type-in-payment-method-matrix-actor-checkgatewaytypeinpaymentmethodmatrixactor-checkgatewaytypeinpaymentmethodmatrixactor)
 - [change-status-field-enable-or-disable ChangeStatusFieldEnableOrDisableActor ChangeStatusFieldEnableOrDisableActor](#change-status-field-enable-or-disable-changestatusfieldenableordisableactor-changestatusfieldenableordisableactor)
-- [upsert-in-to-collection-actor ExceptionRecyclerActor ExceptionRecyclerActor](#upsert-in-to-collection-actor-exceptionrecycleractor-exceptionrecycleractor)
+- [exception-recycler-actor ExceptionRecyclerActor ExceptionRecyclerActor](#exception-recycler-actor-exceptionrecycleractor-exceptionrecycleractor)
 - [get-count-of-documents-actor GetCountOfDocumentsActor GetCountOfDocumentsActor](#get-count-of-documents-actor-getcountofdocumentsactor-getcountofdocumentsactor)
 - [get-documents-by-filter-actor GetDocumentsByFilterActor GetDocumentsByFilterActor](#get-documents-by-filter-actor-getdocumentsbyfilteractor-getdocumentsbyfilteractor)
 - [authentication-actor AuthenticationActor AuthenticationActor](#authentication-actor-authenticationactor-authenticationactor)
@@ -1196,7 +1196,7 @@ public interface ChangeStatusFieldEnableOrDisableActorWrapper {
     void setDocument(IObject document) throws ChangeValueException;
 }
 ```
-## upsert-in-to-collection-actor ExceptionRecyclerActor ExceptionRecyclerActor
+## exception-recycler-actor ExceptionRecyclerActor ExceptionRecyclerActor
 Актор выдачи сообщения об ошибке. Если что-то идет не так, выбрасывает `ru.vp.admin.exception_recycler_actor.ExceptionRecyclerActorException`.
 
 Интерфейс:
