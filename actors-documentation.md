@@ -1133,3 +1133,18 @@ public interface ICreateCollectionWrapper {
     String getCollectionName() throws ReadValueException;
 }
 ```
+
+## check-gateway-type-in-payment-method-matrix-actor CheckGatewayTypeInPaymentMethodMatrixActor CheckGatewayTypeInPaymentMethodMatrixActor
+Проверяет используется ли метод оплаты в платёжной матрице. 
+
+Если данные не совподают или ошибка в формате,то выбрасываетя  `ru.vp.admin.check_gateway_type_in_payment_method_matrix_actor.CheckGatewayTypeInPaymentMethodMatrixException`
+
+Интерфейс:
+```
+public interface CheckGatewayTypeInPaymentMethodMatrixActorWrapper {
+    
+    IObject getGwType() throws ReadValueException;
+
+    List<IObject> getPaymentMatrix() throws ReadValueException;
+}
+```

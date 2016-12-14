@@ -16,9 +16,9 @@ TransformActor +
 PrintMessageActor +
 GetDocumentByIdActor +
 UpsertSessionForUsersActor +
-HashPasswordCreateActor
-GetDocumentListByIdListActor
-CreateCollectionActor
+HashPasswordCreateActor +
+GetDocumentListByIdListActor +
+CreateCollectionActor +
 CheckGatewayTypeInPaymentMethodMatrixActor
 ChangeStatusFieldEnableOrDisableActor
 
